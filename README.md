@@ -37,6 +37,7 @@ Now the local dev is running at localhost:8080 :smile:
 - `gulp css`: compile css files
 - `gulp images`: compress image files
 - `gulp svgs`: minify svgs files
+- `gulp sprite-svg`: generate sprite svg
 - `gulp watch`: call for watch files
 - `gulp browser-sync`: inicialize a server
 - `gulp deploy-surge`: run all tasks and deploy files to surge

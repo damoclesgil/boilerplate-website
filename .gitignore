@@ -4,6 +4,7 @@
 
 # OS generated files #
 ######################
+build/*
 node_modules/*
 .DS_Store
 .DS_Store?
