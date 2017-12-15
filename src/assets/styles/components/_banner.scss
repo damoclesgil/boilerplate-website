@@ -1,0 +1,30 @@
+.main {
+  grid-column: 2/3;
+}
+
+.main--full {
+  grid-column: 2/4
+}
+
+.main--grid {
+  -webkit-align-content: start;
+  -ms-flex-line-pack: start;
+  align-content: start;
+  display: grid;
+  grid-gap: calc(1.86667rem + 0.5vw)
+}
+
+@media all and (min-width: 37.5em) {
+  .main--grid {
+    grid-template-columns: repeat(6, 1fr)
+  }
+  .main--grid>.article {
+    grid-column: span 3
+  }
+}
+
+@media all and (min-width: 37.5em) {
+  .main--no-grid>.article {
+    margin: calc(1.86667rem + 0.5vw) 0
+  }
+}

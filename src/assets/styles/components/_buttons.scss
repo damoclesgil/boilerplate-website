@@ -1,0 +1,51 @@
+.btn {
+  background: #3949ab;
+  border: none;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font: 700 .7242rem "Lato", sans-serif;
+  letter-spacing: .15rem;
+  padding: .8rem 1.6rem;
+  vertical-align: middle;
+  text-align: center;
+  text-transform: lowercase;
+  -webkit-transition: all .24s ease;
+  -o-transition: all .24s ease;
+  transition: all .24s ease;
+  width: 100%
+}
+
+@media all and (min-width: 37.5em) {
+  .btn {
+    width: auto;
+  }
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active,
+{
+  background: #343434;
+  color: #fff
+}
+
+.btn:focus {
+  outline: 2px dotted #343434
+}
+
+.btn:disabled {
+  background-color: whitesmoke;
+  border-color: #ccc;
+  color: #717171;
+  cursor: not-allowed
+}
+
+[type=button],
+[type=submit],
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none
+}

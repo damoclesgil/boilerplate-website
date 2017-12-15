@@ -15,7 +15,9 @@ const browserSync = require('browser-sync'),
   minifyHtml = require('gulp-minify-html'),
   nunjucks = require('gulp-nunjucks-html'),
   plumber = require('gulp-plumber'),
-  stylus = require('gulp-stylus'),
+  sass = require('gulp-sass'),
+  compass = require('gulp-compass'),
+  autoprefixer = require('gulp-autoprefixer'),
   surge = require('gulp-surge'),
   uglify = require('gulp-uglify');
 
@@ -28,6 +30,17 @@ gulp.task('nunjucks', () => {
     }))
     .pipe(gulpif(env.p, minifyHtml()))
     .pipe(gulp.dest('build/'));
+});
+
+gulp.task('sass', () => {
+  return gulp.src('src/assets/styles/main.scss')
+    .pipe(plumber())
+    .pipe(sass())
+    .pipe(autoprefixer({
+      browsers: ['last 20 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest('build/assets/css'));
 });
 
 // Stylus
@@ -95,10 +108,11 @@ gulp.task('sprites', function () {
 // Watch
 gulp.task('watch', () => {
   gulp.watch('src/templates/**/*.html', ['nunjucks']);
-  gulp.watch('src/assets/styles/**/*.styl', ['stylus']);
+  gulp.watch('src/assets/styles/**/*.scss', ['sass']);
   gulp.watch('src/assets/js/**/*.js', ['js']);
-  gulp.watch('src/assets/images/**/*.{jpg,png,gif}', ['imagemin']);
-  gulp.watch('src/assets/svgs/**/*', ['svgmin']);
+  // gulp.watch('src/assets/styles/**/*.styl', ['stylus']);
+  // gulp.watch('src/assets/images/**/*.{jpg,png,gif}', ['imagemin']);
+  // gulp.watch('src/assets/svgs/**/*', ['svgmin']);'
 });
 
 // Browsesync
@@ -134,7 +148,9 @@ gulp.task('surge', () => {
 })
 
 // default
-gulp.task('default', ['nunjucks', 'js', 'stylus', 'images', 'watch', 'browser-sync']);
+gulp.task('default', ['nunjucks', 'js', 'sass', 'watch', 'browser-sync', ])
+// one time
+gulp.task('imgsvg', ['images', 'svgmin'])
 // deploy-gh
 gulp.task('deploy-gh', ['nunjucks', 'js', 'stylus', 'images', 'pages']);
 // deploy-surge

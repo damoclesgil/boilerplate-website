@@ -1,0 +1,41 @@
+.header {
+  grid-column: 2/3;
+  align-items: center;
+  display: flex;
+  margin-top: calc(1.86667rem + 0.5vw);
+  justify-content: space-between;
+  position: relative;
+}
+
+@media all and (min-width: 56.25em) {
+  .header {
+    grid-column: 2/4
+  }
+}
+
+.logo {
+  color: #343434;
+  font-weight: 800
+}
+
+.logo {
+  font-size: 1.4729rem
+}
+
+@media screen and (min-width: 20rem) {
+  .logo {
+    font-size: calc(1.4729rem + 0.43382 * ((100vw - 20rem) / 113))
+  }
+}
+
+@media screen and (min-width: 133rem) {
+  .logo {
+    font-size: 1.90672rem
+  }
+}
+
+@media all and (min-width: 56.25em) {
+  .logo {
+    margin: 0
+  }
+}

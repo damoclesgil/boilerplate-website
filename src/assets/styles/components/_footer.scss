@@ -1,0 +1,27 @@
+.footer {
+  grid-column: 2/3
+}
+
+@media all and (min-width: 56.25em) {
+  .footer {
+    grid-column: 2/4
+  }
+}
+
+.footer {
+  border-top: 1px solid #e3e3e3;
+  font-family: "Roboto", sans-serif;
+  margin-top: calc(1.86667rem + 0.5vw);
+  padding: calc(1.86667rem + 0.5vw) 0;
+  text-align: center;
+  color: black;
+}
+
+.footer__social>a {
+  display: inline-block;
+  padding: 0 .53333rem
+}
+
+.footer__copyright+.footer__social {
+  margin-top: 1.6rem;
+}

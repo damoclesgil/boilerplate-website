@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  grid-gap: calc(1.86667rem + 0.5vw);
+  grid-template-columns: 1fr auto 1fr
+}
+
+@media all and (min-width: 56.25em) {
+  .container {
+    grid-template-columns: 1fr minmax(auto, 42rem) 20rem 1fr
+  }
+}
+
+.conteudo {
+  grid-column: 2/3;
+  color: black;
+}
+
+@media all and (min-width: 56.25em) {
+  .conteudo {
+    grid-column: 3/4
+  }
+}
+
+.second-section {
+  grid-column: 2/4 !important;
+  color: black;
+}

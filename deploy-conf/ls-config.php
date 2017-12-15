@@ -1,0 +1,1 @@
+<?php function authKey(){ return $key = "e11f82bc-3eed-47b3-a681-697c02954842";}?>
